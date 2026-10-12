@@ -32,7 +32,19 @@
     },
     "telepon": {
       "type": "string",
-      "description": "Nomor telepon dalam format +62"
+      "description": "Telepon dalam format +62"
+    },
+    "email": {
+      "type": "string",
+      "description": "Alamat email utama (diisi bila 'Cari email' aktif)"
+    },
+    "email_semua": {
+      "type": "array",
+      "description": "Semua email yang ditemukan di situs bisnis"
+    },
+    "email_sumber": {
+      "type": "string",
+      "description": "Halaman tempat email ditemukan"
     },
     "situs": {
       "type": "string",

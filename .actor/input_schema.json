@@ -29,6 +29,20 @@
       "default": 3,
       "minimum": 1,
       "maximum": 20
+    },
+    "fetchEmails": {
+      "title": "Cari email dari situs web",
+      "type": "boolean",
+      "description": "Kunjungi situs web setiap bisnis dan cari alamat emailnya (halaman utama + halaman kontak). Menambah waktu jalan. Mengisi kolom email, email_semua, email_sumber.",
+      "default": false
+    },
+    "maxEmailSites": {
+      "title": "Maksimum situs yang dikunjungi untuk email",
+      "type": "integer",
+      "description": "Batas jumlah situs web yang dirayap saat mencari email. Hanya berlaku bila 'Cari email' aktif.",
+      "default": 60,
+      "minimum": 1,
+      "maximum": 500
     }
   },
   "required": ["queries"]
