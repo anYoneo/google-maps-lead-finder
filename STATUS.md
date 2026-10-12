@@ -8,7 +8,7 @@ Terakhir diperbarui: 2026-10-12
 |---|---|
 | URL store | https://apify.com/anyoneo/google-maps-lead-finder |
 | Actor ID | `elZURdbISlalQyAQc` |
-| Build terbit | 1.0.2 |
+| Build terbit | 1.0.4 |
 | Publik | ya (`isPublic: true`, halaman HTTP 200) |
 | Monetisasi | **AKTIF** — Pay per event |
 | Harga | **$1,00 / 1.000 hasil** (event `result`) + Actor Start $0,00005 |
@@ -26,9 +26,29 @@ Terakhir diperbarui: 2026-10-12
   rating/ulasan/telepon 92,5%.
 - **Uji cloud (run 1):** "klinik gigi bandung" → 20 item, **kelengkapan 100%** untuk nama, kategori,
   alamat, kode pos, rating, jumlah ulasan, telepon, koordinat, place_id; situs 95%. Durasi 14,1 s.
-- **Uji auto-test (run 2, input kosong):** SUCCEEDED, dataset 60 item ("toko sepatu jakarta").
-  Ini skenario yang dijalankan Apify tiap hari — gagal 3 hari berturut = Actor ditandai
-  *under maintenance*, jadi `default: ["toko sepatu jakarta"]` di `queries` adalah syarat hidup.
+- **Uji auto-test (run 2, input kosong):** SUCCEEDED, dataset 60 item ("toko sepatu jakarta"),
+  durasi 14,2 s pada build 1.0.3. Ini skenario yang dijalankan Apify tiap hari — gagal 3 hari
+  berturut = Actor ditandai *under maintenance*, jadi `default: ["toko sepatu jakarta"]` di
+  `queries` adalah syarat hidup.
+- **Uji email (cloud, build 1.0.3):** input `fetchEmails: true` → 20 tempat, durasi 61,9 s,
+  **email terisi 5/20 baris (25%)**; dari 12 situs yang dikunjungi, 5 memberi email (42%).
+  Kolom lain tetap 100% (nama, kategori, alamat, kode pos, rating, ulasan, telepon, koordinat, place_id).
+- **Uji parser email:** 9 tes tambahan (total **19/19 lulus**) untuk pembuangan alamat penyedia
+  situs, `noreply@`, decode `mailto:` ber-escape, dan pemilihan email utama.
+
+## USP vs pesaing (diukur dari tabel harga mereka, 2026-10-12)
+
+| Actor | Cara menagih | Efektif per 1.000 |
+|---|---|---|
+| **kita** | **1 event (`result`)** | **$1,00** — telepon + situs + email termasuk |
+| `inovaflow/google-maps-leads-scraper` | Lead $0,003 **+** Contact $0,002 + Start $0,005 | $5,00 |
+| `kestrel/google-maps-scraper` | Place $0,003 **+** Contact found $0,002 | $5,00 |
+| `highbrow_fame/google-maps-email-extractor` | result $0,007 + Start $0,015 | $7,00 |
+| `compass/crawler-google-places` (40.411 user) | Scraped place $0,004 **+ add-on** | ~$4–6 |
+
+Pesaing menagih **field kontak sebagai event terpisah**; kita satu harga. Itu USP-nya —
+struktur harga, bukan fitur eksklusif. Kelemahan yang harus diakui: itu mudah ditiru,
+dan cakupan email kita (~25% baris) masih di bawah pemain khusus email.
 
 ## Pasar (diukur 2026-10-12 dari API store)
 
