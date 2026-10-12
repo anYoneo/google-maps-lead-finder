@@ -10,6 +10,7 @@
       "description": "Cari seperti di Google Maps. Semakin spesifik semakin baik — sertakan jenis usaha dan lokasi. Contoh: \"toko sepatu jakarta\", \"klinik gigi bandung\", \"restoran padang surabaya\".",
       "editor": "stringList",
       "prefill": ["toko sepatu jakarta"],
+      "default": ["toko sepatu jakarta"],
       "items": {
         "type": "string"
       }

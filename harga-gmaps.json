@@ -1,0 +1,209 @@
+[
+ {
+  "kw": "google maps email leads",
+  "actor": "inovaflow/google-maps-leads-scraper",
+  "u30": 17,
+  "users": 40,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Lead=0.003",
+   "Contact=0.002",
+   "Actor Start=0.005"
+  ]
+ },
+ {
+  "kw": "google maps email leads",
+  "actor": "highbrow_fame/google-maps-email-extractor",
+  "u30": 12,
+  "users": 109,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "result=0.007",
+   "Actor Start=0.015"
+  ]
+ },
+ {
+  "kw": "google maps email leads",
+  "actor": "kestrel/google-maps-scraper",
+  "u30": 12,
+  "users": 34,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Place=0.003",
+   "Contact found=0.002"
+  ]
+ },
+ {
+  "kw": "google maps email leads",
+  "actor": "xmiso_scrapers/google-maps-email-leads-fast-scraper",
+  "u30": 8,
+  "users": 399,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Actor Start=0.005",
+   "result=0.002"
+  ]
+ },
+ {
+  "kw": "google maps email leads",
+  "actor": "businessmonster/google-maps-scraper",
+  "u30": 7,
+  "users": 11,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Actor Start=5e-05",
+   "Business scraped=0.0025",
+   "Review scraped=0.00025"
+  ]
+ },
+ {
+  "kw": "google maps email leads",
+  "actor": "totaka/google-maps-business-scraper",
+  "u30": 7,
+  "users": 86,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "result=0.004",
+   "Actor Start=5e-05"
+  ]
+ },
+ {
+  "kw": "google maps email leads",
+  "actor": "fetch_cat/google-maps-lead-finder",
+  "u30": 5,
+  "users": 8,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Run started=0.005",
+   "Email verified=0.002",
+   "Lead extracted=0.0010755"
+  ]
+ },
+ {
+  "kw": "google maps email leads",
+  "actor": "totaka/google-maps-brazil-scraper",
+  "u30": 5,
+  "users": 25,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Actor Start=5e-05",
+   "result=0.001"
+  ]
+ },
+ {
+  "kw": "google maps email leads",
+  "actor": "shahabuddin38/Google-Maps-Lead-Finder-API-with-SEO-Audit",
+  "u30": 4,
+  "users": 25,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Lead result=0.01",
+   "Actor Start=5e-05"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "compass/crawler-google-places",
+  "u30": 40400,
+  "users": 645236,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Scraped place=0.004",
+   "Add-on: Filter applied=0.001",
+   "Add-on: Additional place details scraped=0.002"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "compass/Google-Maps-Reviews-Scraper",
+  "u30": 7475,
+  "users": 61530,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Scraped review=0.0006",
+   "Actor Start=5e-05"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "lukaskrivka/google-maps-with-contact-details",
+  "u30": 2736,
+  "users": 92034,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Scraped place=0.005",
+   "Add-on: Filter applied=0.0015",
+   "Add-on: Additional place details scraped=0.003"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "compass/google-maps-extractor",
+  "u30": 2603,
+  "users": 104144,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Scraped place=0.005",
+   "Add-on: Filter applied=0.001",
+   "Add-on: Additional place details scraped=0.002"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "vortex_data/google-maps",
+  "u30": 772,
+  "users": 3688,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Place scraped=0.001",
+   "Place with contact details=0.0015",
+   "Place with full details=0.001"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "scraperlink/google-maps-scraper",
+  "u30": 723,
+  "users": 4633,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "result=0.0005",
+   "Actor Start=5e-05",
+   "Popular Times enrichment=0.00025"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "web_wanderer/google-reviews-scraper",
+  "u30": 324,
+  "users": 2104,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "Review=0.00035",
+   "Actor Start=0.002"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "kaix/google-maps-reviews-scraper",
+  "u30": 301,
+  "users": 1682,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "reviews=4e-05",
+   "Actor Start=5e-05"
+  ]
+ },
+ {
+  "kw": "google maps scraper",
+  "actor": "kaix/google-maps-places-scraper",
+  "u30": 271,
+  "users": 1504,
+  "model": "PAY_PER_EVENT",
+  "harga": [
+   "places=8e-05",
+   "photo=1e-05",
+   "Actor Start=5e-05"
+  ]
+ }
+]
