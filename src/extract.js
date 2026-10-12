@@ -137,6 +137,10 @@ function mapTempat(blok) {
       ? `https://www.google.com/maps/place/?q=place_id:${placeId}`
       : (cid ? `https://maps.google.com/?cid=${cid.split(':')[1]}` : null),
     gambar: teks(pada(blok, 157)),
+    // Kolom email diisi belakangan oleh src/email.js (opsional) — tetap null bila tidak dijalankan.
+    email: null,
+    email_semua: null,
+    email_sumber: null,
     diambil_pada: new Date().toISOString(),
   };
 }
@@ -304,7 +308,7 @@ async function scrapeMaps(opsi) {
 /** Baris -> CSV */
 function keCSV(rows) {
   const kolom = ['nama', 'kategori', 'alamat', 'kota', 'kode_pos', 'rating', 'jumlah_ulasan',
-    'telepon', 'situs', 'lintang', 'bujur', 'place_id', 'cid', 'url', 'gambar', 'diambil_pada'];
+    'telepon', 'email', 'situs', 'lintang', 'bujur', 'place_id', 'cid', 'url', 'gambar', 'diambil_pada'];
   const esc = (v) => {
     if (v == null) return '';
     const s = String(v).replace(/"/g, '""');

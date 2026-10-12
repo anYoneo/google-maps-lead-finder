@@ -10,6 +10,7 @@
 
 const fs = require('fs');
 const { scrapeMaps, keCSV } = require('./extract');
+const { isiEmail } = require('./email');
 
 function arg(nama, bawaan) {
   const i = process.argv.indexOf('--' + nama);
@@ -38,7 +39,7 @@ function daftar(nama) {
     await ActorRef.init();
   }
 
-  let queries = null, maxItems = 100, maxPages = 3;
+  let queries = null, maxItems = 100, maxPages = 3, fetchEmails = false, maxEmailSites = 60;
   if (diApify) {
     const input = (await ActorRef.getInput()) || {};
     queries = Array.isArray(input.queries)
@@ -46,6 +47,8 @@ function daftar(nama) {
       : (input.query ? [input.query] : null);
     if (input.maxItems) maxItems = parseInt(input.maxItems, 10);
     if (input.maxPages != null) maxPages = parseInt(input.maxPages, 10);
+    fetchEmails = input.fetchEmails === true;
+    if (input.maxEmailSites) maxEmailSites = parseInt(input.maxEmailSites, 10);
   }
 
   if (!queries || !queries.length) {
@@ -53,6 +56,7 @@ function daftar(nama) {
     if (!diApify) {
       maxItems = parseInt(arg('maxItems', arg('limit', maxItems)), 10);
       maxPages = parseInt(arg('maxPages', maxPages), 10);
+      fetchEmails = arg('fetchEmails', false) !== false;
     }
   }
   const out = arg('out', null);
@@ -62,6 +66,16 @@ function daftar(nama) {
     maxItems,
     maxPages,
     log: (m) => console.log('[info]', m),
+  });
+
+  // Isi kolom email dengan merayap situs bisnis (opsional; default mati di Actor).
+  const logEmail = (m) => console.log('[info]', m);
+  await isiEmail(rows, {
+    aktif: fetchEmails,
+    maxSitus: maxEmailSites,
+    paralel: 4,
+    timeoutMs: 9000,
+    log: logEmail,
   });
 
   console.log(JSON.stringify({ jumlah: rows.length, contoh: rows.slice(0, 2) }, null, 1));
