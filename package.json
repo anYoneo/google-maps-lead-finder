@@ -1,0 +1,24 @@
+{
+  "name": "google-maps-lead-finder",
+  "version": "1.0.0",
+  "description": "Ambil data bisnis lokal Google Maps: nama, alamat, telepon, situs, rating, jumlah ulasan, kategori, koordinat. Untuk pencarian lead dan riset pasar.",
+  "type": "commonjs",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "local": "node src/main.js --queries \"toko sepatu jakarta\" --maxItems 40 --out hasil.csv",
+    "test": "node --test test/map.test.js"
+  },
+  "keywords": [
+    "google-maps",
+    "lead-generation",
+    "scraper",
+    "local-business",
+    "indonesia"
+  ],
+  "dependencies": {
+    "apify": "^3.7.2",
+    "playwright": "^1.64.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://apify.com/schemas/v1/input.ide.json",
+  "title": "Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Kata kunci pencarian",
+      "type": "array",
+      "description": "Cari seperti di Google Maps. Semakin spesifik semakin baik — sertakan jenis usaha dan lokasi. Contoh: \"toko sepatu jakarta\", \"klinik gigi bandung\", \"restoran padang surabaya\".",
+      "editor": "stringList",
+      "prefill": ["toko sepatu jakarta"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "maxItems": {
+      "title": "Maksimum hasil",
+      "type": "integer",
+      "description": "Total baris maksimum yang diambil. Biaya dihitung per hasil.",
+      "default": 100,
+      "minimum": 1
+    },
+    "maxPages": {
+      "title": "Maksimum halaman per kata kunci",
+      "type": "integer",
+      "description": "Berapa halaman hasil yang diambil per kata kunci. Tiap halaman menambah sekitar 20 tempat. Gunakan 1 untuk uji cepat, 5+ untuk daftar besar.",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 20
+    }
+  },
+  "required": ["queries"]
+}

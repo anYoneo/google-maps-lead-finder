@@ -1,0 +1,25 @@
+{
+  "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+  "actorSpecification": 1,
+  "name": "google-maps-lead-finder",
+  "title": "Google Maps Lead Finder — Bisnis Lokal, Kontak & Rating",
+  "description": "Ambil data bisnis lokal dari Google Maps: nama, alamat, telepon, situs web, rating, jumlah ulasan, kategori, dan koordinat. Untuk pencarian lead, riset pasar, dan pemetaan kompetitor. Ekspor JSON/CSV/Excel atau pakai API.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "js-crawlee-playwright-chrome"
+  },
+  "inputSchema": "./input_schema.json",
+  "outputSchema": "./output_schema.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "categories": [
+    "BUSINESS",
+    "MARKETING"
+  ],
+  "seoTitle": "Google Maps Lead Finder API — Kontak, Alamat, Rating Bisnis Lokal",
+  "seoDescription": "Ambil lead bisnis lokal dari Google Maps: nama, alamat, telepon, situs, rating, jumlah ulasan, kategori, koordinat. Ekspor JSON/CSV/Excel lewat API."
+}

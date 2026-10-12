@@ -1,0 +1,70 @@
+{
+  "$schema": "https://apify.com/schemas/v1/dataset.ide.json",
+  "actorSpecification": 1,
+  "fields": {
+    "nama": {
+      "type": "string",
+      "description": "Nama bisnis/tempat"
+    },
+    "kategori": {
+      "type": "string",
+      "description": "Kategori usaha menurut Google Maps (mis. \"Toko Sepatu\")"
+    },
+    "alamat": {
+      "type": "string",
+      "description": "Alamat lengkap satu baris"
+    },
+    "kota": {
+      "type": "string",
+      "description": "Kota/kabupaten"
+    },
+    "kode_pos": {
+      "type": "string",
+      "description": "Kode pos"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Rating rata-rata (1-5)"
+    },
+    "jumlah_ulasan": {
+      "type": "integer",
+      "description": "Jumlah ulasan"
+    },
+    "telepon": {
+      "type": "string",
+      "description": "Nomor telepon dalam format +62"
+    },
+    "situs": {
+      "type": "string",
+      "description": "Situs web bila ada"
+    },
+    "lintang": {
+      "type": "number",
+      "description": "Koordinat lintang"
+    },
+    "bujur": {
+      "type": "number",
+      "description": "Koordinat bujur"
+    },
+    "place_id": {
+      "type": "string",
+      "description": "ID tempat Google (stabil, untuk pencocokan antar-waktu)"
+    },
+    "cid": {
+      "type": "string",
+      "description": "Customer ID Google"
+    },
+    "url": {
+      "type": "string",
+      "description": "Tautan ke halaman tempat di Google Maps"
+    },
+    "gambar": {
+      "type": "string",
+      "description": "Tautan foto profil"
+    },
+    "diambil_pada": {
+      "type": "string",
+      "description": "Waktu pengambilan (ISO 8601)"
+    }
+  }
+}
