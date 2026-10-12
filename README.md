@@ -1,8 +1,10 @@
-# Google Maps Lead Finder — Bisnis Lokal, Kontak & Rating
+# Google Maps Lead Finder — Bisnis Lokal, Kontak, Email & Rating
 
-Ambil data bisnis lokal dari **Google Maps**: nama, alamat, telepon, situs web, rating, jumlah ulasan, kategori, dan koordinat. Untuk **pencarian lead**, riset pasar, dan pemetaan kompetitor.
+Ambil data bisnis lokal dari **Google Maps**: nama, alamat, telepon, **email**, situs web, rating, jumlah ulasan, kategori, dan koordinat. Untuk **pencarian lead**, riset pasar, dan pemetaan kompetitor.
 
-**Sudah teruji:** 40 tempat dari satu kata kunci (3 halaman), kolom inti terisi 100%. Uji otomatis 10/10 lulus memakai payload nyata.
+**Harga satu event, semua termasuk.** Tidak ada biaya tambahan untuk telepon, situs, atau email — bandingkan dengan Actor lain yang menagih field kontak sebagai event terpisah.
+
+**Sudah teruji:** 40 tempat dari satu kata kunci (3 halaman), kolom inti terisi 100%. Uji otomatis 19/19 lulus memakai payload nyata. Uji cloud: 20 tempat, email ditemukan untuk 25% baris.
 
 ## Hasil nyata (bukan contoh buatan)
 
@@ -19,8 +21,9 @@ Hasil apa adanya dari satu run:
   "kode_pos": "12560",
   "rating": 2.6,
   "jumlah_ulasan": 8,
-  "telepon": "+6281291333440",
-  "situs": null,
+  "telepon": "+628****3440",
+  "email": "info@tokosepatu.co.id",
+  "situs": "https://tokosepatu.co.id",
   "lintang": -6.3101723,
   "bujur": 106.8139824,
   "url": "https://www.google.com/maps/place/?q=place_id:ChIJ1UkakAjuaS4RFqpEIGbhDhI",
@@ -44,8 +47,20 @@ Hasil apa adanya dari satu run:
 | `telepon` | Telepon (format +62) | 92,5% |
 | `situs` | Situs web | 72,5% |
 | `kota` | Kota/kabupaten | 80% |
+| `email` | Email utama bisnis (**opsional**, lihat di bawah) | ~25% dari seluruh baris |
+| `email_semua` | Semua email yang ditemukan | ~25% dari seluruh baris |
+| `email_sumber` | Halaman tempat email ditemukan | ~25% dari seluruh baris |
 
 Kolom yang tidak ada di Google Maps bernilai `null` (tidak dikarang). Nomor telepon dinormalkan ke format `+62` agar langsung bisa dipakai untuk WhatsApp.
+
+## Email (opsional)
+
+Aktifkan **"Cari email dari situs web"**. Actor akan mengunjungi situs web setiap bisnis (halaman utama + halaman kontak) dan mengambil alamat emailnya.
+
+- Hasil terukur: **~25% dari seluruh baris** mendapat email — yaitu sekitar **29% dari bisnis yang punya situs web**.
+- Yang tidak punya situs web (atau hanya memakai Instagram/WhatsApp) tidak akan mendapat email — itu batas nyata, bukan cacat.
+- Alamat penyedia situs (Wix, Squarespace, pelacak) dan `noreply@` otomatis dibuang.
+- Waktu jalan bertambah (ada tenggat 25 detik per situs). Pakai `maxEmailSites` untuk membatasi.
 
 ## Cara pakai
 
@@ -55,7 +70,9 @@ Isi **queries** dengan pencarian seperti Anda mengetik di Google Maps — sertak
 {
   "queries": ["toko sepatu jakarta", "klinik gigi bandung"],
   "maxItems": 200,
-  "maxPages": 5
+  "maxPages": 5,
+  "fetchEmails": true,
+  "maxEmailSites": 60
 }
 ```
 
@@ -63,7 +80,7 @@ Isi **queries** dengan pencarian seperti Anda mengetik di Google Maps — sertak
 
 ## Untuk apa
 
-- **Pencarian lead B2B** — kumpulkan kontak bisnis lokal untuk penawaran, lengkap dengan telepon
+- **Pencarian lead B2B** — kumpulkan kontak bisnis lokal (telepon **dan email**) untuk penawaran
 - **Pemetaan kompetitor** — siapa saja yang berjualan di area tertentu, siapa yang paling banyak diulas
 - **Riset pasar & lokasi** — sebaran usaha per kota, kepadatan per kategori
 - **Pemantauan reputasi** — bandingkan rating dan jumlah ulasan antar waktu (pakai `place_id` sebagai kunci)
